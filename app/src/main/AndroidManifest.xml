@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PracticaInicial">
+
+
+        <!-- Activity Primer punto del Entregable -->
+        <activity
+            android:name=".lifecycles.LifeCyclesActivity"
+            android:exported="true">
+
+        </activity>
+
+        <!-- Activity Segundo punto del Entregable -->
+
+        <activity
+            android:name=".implicitintent.ImplicitIntentActivity"
+            android:exported="true">
+
+        </activity>
+
+        <!-- Activity Tercer punto del Entregable -->
+
+        <activity
+            android:name=".dosactivities.FirstActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".dosactivities.SecondActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
