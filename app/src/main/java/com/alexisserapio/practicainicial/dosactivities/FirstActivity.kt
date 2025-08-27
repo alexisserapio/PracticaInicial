@@ -17,9 +17,10 @@ class FirstActivity : AppCompatActivity() {
 
     private val register = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
         if (result.resultCode == RESULT_OK){
+            val doubleResult = result.data?.getDoubleExtra("EXTRA_DOUBLE_KEY", 0.0)
             val booleanResult = result.data?.getBooleanExtra("EXTRA_BOOLEAN_KEY", false)
             val person1 = result.data?.getSerializableExtra("EXTRA_PERSON_KEY") as Person
-            Toast.makeText(this, "RESULT_OK $booleanResult, $person1", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "RESULT_OK $booleanResult,$doubleResult, $person1", Toast.LENGTH_SHORT).show()
         }else{
             Toast.makeText(this, "RESULT_CANCELLED", Toast.LENGTH_LONG).show()
         }

@@ -39,9 +39,9 @@ class SecondActivity : AppCompatActivity() {
                     infoReceived += bundle.getString("EXTRA_SURNAME_KEY", "")
                     infoReceived += " | "
                     infoReceived += "Gender: "
-                    infoReceived += bundle.getChar("EXTRA_GENDER,KEY", 'N')
+                    infoReceived += bundle.getChar("EXTRA_GENDER_KEY", 'N')
                     infoReceived += " | "
-                    infoReceived += "Married?: "
+                    infoReceived += "Married: "
                     infoReceived += bundle.getBoolean("EXTRA_MARRIED_KEY", false)
                     infoReceived += " | "
                     infoReceived += "Discount Code: "
@@ -52,6 +52,9 @@ class SecondActivity : AppCompatActivity() {
                 infoReceived += " | "
                 infoReceived += "Age: "
                 infoReceived += info.getInt("EXTRA_AGE_KEY", 0)
+                infoReceived += " | "
+                infoReceived += "Price: "
+                infoReceived += info.getDouble("EXTRA_PRICE_KEY")
             }
         }
 
@@ -75,6 +78,7 @@ class SecondActivity : AppCompatActivity() {
         btnBackResult.setOnClickListener {
             val person1 = Person("Alexis", "Serapio", 23, false, 'M', 100)
             val resultIntent = Intent().apply {
+                putExtra("EXTRA_DOUBLE_KEY",0)
                 putExtra("EXTRA_BOOLEAN_KEY", true)
                 putExtra("EXTRA_PERSON_KEY", person1)
             }
